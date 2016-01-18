@@ -1,0 +1,150 @@
+shadow_pa10_7dof:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers ---------------------------------------
+  joint_base_to_s2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint_base_to_s2
+    pid: {p: 1000.0, i: 0.01, d: 10.0}
+  joint_s2_to_s3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint_s2_to_s3
+    pid: {p: 1000.0, i: 0.01, d: 10.0}
+  joint_s3_to_e1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint_s3_to_e1
+    pid: {p: 1000.0, i: 0.01, d: 10.0}
+  joint_e1_to_e2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint_e1_to_e2
+    pid: {p: 1000.0, i: 0.01, d: 10.0}
+  joint_e2_to_w1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint_e2_to_w1
+    pid: {p: 1000.0, i: 0.01, d: 10.0}
+  joint_w1_to_w2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint_w1_to_w2
+    pid: {p: 1000.0, i: 0.01, d: 5.0}
+  joint_w2_to_eef_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint_w2_to_eef
+    pid: {p: 1000.0, i: 0.01, d: 10.0}
+
+  # Shadow Hand:
+
+  WRJ2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: WRJ2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  WRJ1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: WRJ1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  FFJ4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: FFJ4
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  FFJ3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: FFJ3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  FFJ2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: FFJ2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  FFJ1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: FFJ1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+  MFJ4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: MFJ4
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  MFJ3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: MFJ3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  MFJ2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: MFJ2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  MFJ1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: MFJ1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+  RFJ4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: RFJ4
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  RFJ3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: RFJ3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  RFJ2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: RFJ2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  RFJ1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: RFJ1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+  LFJ5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LFJ5
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  LFJ4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LFJ4
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  LFJ3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LFJ3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  LFJ2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LFJ2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  LFJ1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: LFJ1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  THJ5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: THJ5
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  THJ4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: THJ4
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  THJ3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: THJ3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  THJ2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: THJ2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  THJ1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: THJ1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+  # Joint controller
+  #pa10_controller:
+  #type: "position_controllers/JointTrajectoryController"
+  #joint: [joint_base_to_s2, joint_s2_to_s3 ,joint_e1_to_e2, joint_e2_to_w1, joint_w1_to_w2, joint_w2_to_eef]
+  #pid: {p: 100.0, i: 0.01, d: 10.0}

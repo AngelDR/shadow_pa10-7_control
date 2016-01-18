@@ -1,0 +1,52 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find shadow_pa10_7dof_control)/config/shadow_pa10_7dof_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" ns="/shadow_pa10_7dof" args="joint_state_controller
+                                              	joint_base_to_s2_position_controller
+                                              	joint_s2_to_s3_position_controller
+					      	joint_s3_to_e1_position_controller
+					      	joint_e1_to_e2_position_controller
+					      	joint_e2_to_w1_position_controller
+					      	joint_w1_to_w2_position_controller
+					      	joint_w2_to_eef_position_controller
+						WRJ2_position_controller
+						WRJ1_position_controller
+						
+						FFJ4_position_controller
+						FFJ3_position_controller
+						FFJ2_position_controller
+						FFJ1_position_controller
+
+						MFJ4_position_controller
+						MFJ3_position_controller
+						MFJ2_position_controller
+						MFJ1_position_controller
+
+						RFJ4_position_controller
+						RFJ3_position_controller
+						RFJ2_position_controller
+						RFJ1_position_controller
+
+						LFJ5_position_controller
+						LFJ4_position_controller
+						LFJ3_position_controller
+						LFJ2_position_controller
+						LFJ1_position_controller 
+
+						THJ5_position_controller
+						THJ4_position_controller
+						THJ3_position_controller
+						THJ2_position_controller
+						THJ1_position_controller "/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+    <remap from="/joint_states" to="/shadow_pa10_7dof/joint_states" />
+  </node>
+
+</launch>
